@@ -35,6 +35,7 @@ export default async function WorkflowPage({ params }: Props) {
           {workflow.prompt}
         </pre>
 
+
         <div className="mt-3">
           <CopyButton text={workflow.prompt} />
         </div>
