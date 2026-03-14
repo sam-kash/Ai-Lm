@@ -36,6 +36,17 @@ export default async function WorkflowPage({ params }: Props) {
           {workflow.prompt}
         </pre>
 
+        {workflow.example_output_url && (
+          <div className="mb-6">
+            <h2 className="font-semibold mb-2">Example Output</h2>
+
+            <img
+              src={workflow.example_output_url}
+              alt="workflow result"
+              className="rounded border"
+            />
+          </div>
+        )}
 
         <div className="mt-3">
           <CopyButton text={workflow.prompt} />
