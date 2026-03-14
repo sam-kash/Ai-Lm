@@ -1,16 +1,17 @@
 import { supabase } from "@/lib/supabase"
 import CopyButton from "@/components/CopyButton"
-
+import ForkButton from "@/components/ForkButton"
 type Props = {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export default async function WorkflowPage({ params }: Props) {
+  const { id } = await params
 
   const { data: workflow } = await supabase
     .from("workflows")
     .select("*")
-    .eq("id", params.id)
+    .eq("id", id)
     .single()
 
   if (!workflow) {
@@ -45,6 +46,11 @@ export default async function WorkflowPage({ params }: Props) {
       <div className="mb-6">
         <h2 className="font-semibold mb-2">Variables</h2>
         <p>{workflow.variables?.join(", ")}</p>
+      </div>
+
+      <div className="flex gap-3 mt-3">
+      <CopyButton text={workflow.prompt} />
+      <ForkButton workflow={workflow} />
       </div>
 
     </main>
