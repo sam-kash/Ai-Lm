@@ -32,12 +32,12 @@ export default function WorkflowCard({ workflow }: any) {
             {workflow.model}
           </p>
 
-          <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
+          <div className="flex justify-between mt-4 text-sm text-gray-600">
 
-            <span> {workflow.runs} runs</span>
+            <span> {workflow.runs}</span>
 
             {workflow.title.includes("(Fork)") && (
-              <span className="bg-gray-200 px-2 py-1 rounded text-xs">
+              <span className="text-xs bg-gray-200 px-2 py-1 rounded">
                 Fork
               </span>
             )}

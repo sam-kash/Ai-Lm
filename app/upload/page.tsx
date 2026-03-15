@@ -2,11 +2,13 @@ import WorkflowForm from "@/components/WorkflowForm"
 
 export default function UploadPage(){
     return (
-        <main className="max-w-2xl mx-auto p-8">
-            <h1 className="text-3xl front-bold mb-6">
+        <main className="max-w-xl mx-auto">
+            <h1 className="text-3xl font-bold mb-6">
                 Upload Workflow
             </h1>
-            <WorkflowForm />
+            <div className="bg-white border rounded-xl p-6 shadow-sm">
+                <WorkflowForm />
+            </div>
         </main>
     )
 }

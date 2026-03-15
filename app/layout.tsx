@@ -10,16 +10,29 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-50 text-gray-900">
 
-        <nav className="border-b bg-white">
-          <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+        <nav className="bg-white border-b">
+          <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
 
             <Link href="/" className="font-bold text-xl">
-              AI Workflows
+               AI Workflows
             </Link>
 
             <div className="flex gap-6 text-sm font-medium">
-              <Link href="/">Explore</Link>
-              <Link href="/upload">Upload</Link>
+
+              <Link
+                href="/"
+                className="hover:text-blue-600"
+              >
+                Explore
+              </Link>
+
+              <Link
+                href="/upload"
+                className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800"
+              >
+                Upload
+              </Link>
+
             </div>
 
           </div>
