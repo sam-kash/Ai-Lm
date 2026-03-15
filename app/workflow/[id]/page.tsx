@@ -49,7 +49,7 @@ export default async function WorkflowPage({ params }: Props) {
         )}
 
         <div className="mt-3">
-          <CopyButton text={workflow.prompt} />
+          <CopyButton text={workflow.prompt} workflowId={workflow.id} />
         </div>
 
       </div>
@@ -60,8 +60,12 @@ export default async function WorkflowPage({ params }: Props) {
       </div>
 
       <div className="flex gap-3 mt-3">
-      <CopyButton text={workflow.prompt} />
-      <ForkButton workflow={workflow} />
+        <CopyButton
+          text={workflow.prompt}
+          workflowId={workflow.id}
+        />
+
+        <ForkButton workflow={workflow} />
       </div>
 
     </main>

@@ -19,7 +19,8 @@ export default async function Home() {
         Explore Workflows
       </h1>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
         {workflowList.map((workflow) => (
           <WorkflowCard key={workflow.id} workflow={workflow} />
         ))}
