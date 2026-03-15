@@ -19,6 +19,15 @@ export default async function Home() {
         Explore Workflows
       </h1>
 
+      <h1 className="text-3xl font-bold mb-2">
+        Explore AI Workflows
+      </h1>
+
+      <p className="text-gray-500 mb-8">
+        Discover and reuse powerful AI prompts and workflows.
+      </p>
+
+
       <input
         placeholder="Search workflows..."
         className="border rounded-lg p-2 w-full mb-6"

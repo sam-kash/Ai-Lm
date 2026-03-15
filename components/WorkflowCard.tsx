@@ -8,10 +8,11 @@ export type Workflow = {
   example_output_url?: string | null
 }
 
-export default function WorkflowCard({ workflow }: { workflow: Workflow }) {
+export default function WorkflowCard({ workflow }: any) {
   return (
     <Link href={`/workflow/${workflow.id}`}>
-      <div className="rounded-xl border hover:shadow-lg transition overflow-hidden bg-white">
+
+      <div className="bg-white rounded-xl border hover:shadow-lg transition overflow-hidden">
 
         {workflow.example_output_url && (
           <img
@@ -27,16 +28,16 @@ export default function WorkflowCard({ workflow }: { workflow: Workflow }) {
             {workflow.title}
           </h2>
 
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-gray-500 text-sm mt-1">
             {workflow.model}
           </p>
 
-          <div className="flex justify-between mt-3 text-sm text-gray-600">
+          <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
 
             <span> {workflow.runs} runs</span>
 
             {workflow.title.includes("(Fork)") && (
-              <span className="text-xs bg-gray-200 px-2 py-1 rounded">
+              <span className="bg-gray-200 px-2 py-1 rounded text-xs">
                 Fork
               </span>
             )}
@@ -46,6 +47,7 @@ export default function WorkflowCard({ workflow }: { workflow: Workflow }) {
         </div>
 
       </div>
+
     </Link>
   )
 }

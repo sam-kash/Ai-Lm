@@ -1,12 +1,5 @@
-import type { ReactNode } from "react"
 import Link from "next/link"
 import "./globals.css"
-
-
-export const metadata = {
-  title: "AI Workflows",
-  description: "Explore saved AI workflows.",
-}
 
 export default function RootLayout({
   children,
@@ -15,16 +8,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-gray-50 text-gray-900">
 
-        <nav className="border-b p-4">
-          <div className="max-w-4xl mx-auto flex justify-between">
+        <nav className="border-b bg-white">
+          <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-            <Link href="/" className="font-bold">
+            <Link href="/" className="font-bold text-xl">
               AI Workflows
             </Link>
 
-            <div className="space-x-4">
+            <div className="flex gap-6 text-sm font-medium">
               <Link href="/">Explore</Link>
               <Link href="/upload">Upload</Link>
             </div>
@@ -32,7 +25,9 @@ export default function RootLayout({
           </div>
         </nav>
 
-        {children}
+        <main className="max-w-6xl mx-auto p-6">
+          {children}
+        </main>
 
       </body>
     </html>

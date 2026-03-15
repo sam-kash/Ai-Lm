@@ -29,43 +29,36 @@ export default async function WorkflowPage({ params }: Props) {
         Model: {workflow.model}
       </p>
 
-      <div className="mb-6">
-        <h2 className="font-semibold mb-2">Prompt</h2>
+      <div className="bg-white border rounded-lg p-6 mb-6">
+        <h2 className="font-semibold mb-3">
+          Prompt
+        </h2>
 
-        <pre className="bg-gray-100 p-4 rounded">
+        <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
           {workflow.prompt}
         </pre>
 
-        {workflow.example_output_url && (
-          <div className="mb-6">
-            <h2 className="font-semibold mb-2">Example Output</h2>
-
-            <img
-              src={workflow.example_output_url}
-              alt="workflow result"
-              className="rounded border"
-            />
-          </div>
-        )}
-
-        <div className="mt-3">
+        <div className="flex gap-3 mt-4">
           <CopyButton text={workflow.prompt} workflowId={workflow.id} />
+          <ForkButton workflow={workflow} />
         </div>
-
       </div>
+
+      {workflow.example_output_url && (
+        <div className="mb-6">
+          <h2 className="font-semibold mb-2">Example Output</h2>
+
+          <img
+            src={workflow.example_output_url}
+            alt="workflow result"
+            className="rounded border"
+          />
+        </div>
+      )}
 
       <div className="mb-6">
         <h2 className="font-semibold mb-2">Variables</h2>
         <p>{workflow.variables?.join(", ")}</p>
-      </div>
-
-      <div className="flex gap-3 mt-3">
-        <CopyButton
-          text={workflow.prompt}
-          workflowId={workflow.id}
-        />
-
-        <ForkButton workflow={workflow} />
       </div>
 
     </main>
