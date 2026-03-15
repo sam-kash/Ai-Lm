@@ -5,7 +5,7 @@ export default async function Home() {
   const { data: workflows, error } = await supabase
     .from("workflows")
     .select("*")
-    .order("created_at", { ascending: false })
+    .order("runs", { ascending: false })
 
   if (error) {
     throw new Error(error.message)
@@ -18,6 +18,12 @@ export default async function Home() {
       <h1 className="text-3xl font-bold mb-6">
         Explore Workflows
       </h1>
+
+      <input
+        placeholder="Search workflows..."
+        className="border rounded-lg p-2 w-full mb-6"
+      />
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 

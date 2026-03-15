@@ -5,13 +5,13 @@ export type Workflow = {
   title: string
   model: string
   runs: number
-  example_output_url?:string
+  example_output_url?: string | null
 }
 
 export default function WorkflowCard({ workflow }: { workflow: Workflow }) {
   return (
     <Link href={`/workflow/${workflow.id}`}>
-      <div className="border rounded-lg overflow-hidden hover:shadow cursor-pointer">
+      <div className="rounded-xl border hover:shadow-lg transition overflow-hidden bg-white">
 
         {workflow.example_output_url && (
           <img
@@ -22,17 +22,27 @@ export default function WorkflowCard({ workflow }: { workflow: Workflow }) {
         )}
 
         <div className="p-4">
-          <h2 className="text-lg font-semibold">
+
+          <h2 className="font-semibold text-lg line-clamp-1">
             {workflow.title}
           </h2>
 
-          <p className="text-sm text-gray-500">
-            Model: {workflow.model}
+          <p className="text-sm text-gray-500 mt-1">
+            {workflow.model}
           </p>
 
-          <p className="text-sm">
-            Runs: {workflow.runs}
-          </p>
+          <div className="flex justify-between mt-3 text-sm text-gray-600">
+
+            <span> {workflow.runs} runs</span>
+
+            {workflow.title.includes("(Fork)") && (
+              <span className="text-xs bg-gray-200 px-2 py-1 rounded">
+                Fork
+              </span>
+            )}
+
+          </div>
+
         </div>
 
       </div>
