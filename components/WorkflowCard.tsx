@@ -12,7 +12,7 @@ export default function WorkflowCard({ workflow }: any) {
   return (
     <Link href={`/workflow/${workflow.id}`}>
 
-      <div className="bg-white rounded-xl border hover:shadow-lg transition overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border dark:border-gray-700 hover:shadow-lg transition overflow-hidden">
 
         {workflow.example_output_url && (
           <img
