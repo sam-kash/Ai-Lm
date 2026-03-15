@@ -20,13 +20,13 @@ export default async function Home() {
           Discover AI Workflows
         </h1>
 
-        <p className="text-gray-600 mb-6 max-w-xl">
+        <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-xl">
           Share, discover and fork powerful AI prompts and workflows.
         </p>
 
         <input
           placeholder="Search workflows..."
-          className="w-full md:w-96 border rounded-lg p-3"
+          className="w-full md:w-96 border rounded-lg p-3 bg-white text-gray-900 placeholder:text-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-500"
         />
       </div>
 

@@ -25,16 +25,16 @@ export default async function WorkflowPage({ params }: Props) {
         {workflow.title}
       </h1>
 
-      <p className="text-gray-500 mb-4">
+      <p className="text-gray-500 dark:text-gray-300 mb-4">
         Model: {workflow.model}
       </p>
 
-      <div className="bg-white border rounded-lg p-6 mb-6">
+      <div className="bg-white border rounded-lg p-6 mb-6 dark:bg-gray-800 dark:border-gray-700">
         <h2 className="font-semibold mb-3">
           Prompt
         </h2>
 
-        <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto">
+        <pre className="bg-gray-100 p-4 rounded text-sm overflow-x-auto dark:bg-gray-900 dark:text-gray-100">
           {workflow.prompt}
         </pre>
 
@@ -51,14 +51,14 @@ export default async function WorkflowPage({ params }: Props) {
           <img
             src={workflow.example_output_url}
             alt="workflow result"
-            className="rounded border"
+            className="rounded border dark:border-gray-700"
           />
         </div>
       )}
 
       <div className="mb-6">
         <h2 className="font-semibold mb-2">Variables</h2>
-        <p>{workflow.variables?.join(", ")}</p>
+        <p className="text-gray-700 dark:text-gray-300">{workflow.variables?.join(", ")}</p>
       </div>
 
     </main>

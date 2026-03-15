@@ -73,7 +73,7 @@ export default function WorkflowForm() {
         placeholder="Workflow Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded bg-white text-gray-900 placeholder:text-gray-400 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-500"
         required
       />
 
@@ -81,7 +81,7 @@ export default function WorkflowForm() {
         placeholder="Prompt"
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded bg-white text-gray-900 placeholder:text-gray-400 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-500"
         rows={4}
         required
       />
@@ -91,7 +91,7 @@ export default function WorkflowForm() {
         placeholder="Model (ex: Midjourney)"
         value={model}
         onChange={(e) => setModel(e.target.value)}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded bg-white text-gray-900 placeholder:text-gray-400 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-500"
         required
       />
 
@@ -100,19 +100,19 @@ export default function WorkflowForm() {
         placeholder="Variables (comma separated)"
         value={variables}
         onChange={(e) => setVariables(e.target.value)}
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded bg-white text-gray-900 placeholder:text-gray-400 dark:bg-gray-900 dark:border-gray-700 dark:text-gray-100 dark:placeholder:text-gray-500"
       />
 
       <input
         type="file"
         accept="image/*"
         onChange={(e) => setImage(e.target.files?.[0] || null)}
-        className="w-full"
+        className="w-full text-gray-700 dark:text-gray-300 file:mr-4 file:rounded file:border-0 file:bg-gray-200 file:px-4 file:py-2 file:text-sm file:font-medium hover:file:bg-gray-300 dark:file:bg-gray-700 dark:file:text-gray-100 dark:hover:file:bg-gray-600"
       />
 
       <button
         type="submit"
-        className="px-4 py-2 bg-black text-white rounded"
+        className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200"
       >
         Upload Workflow
       </button>
