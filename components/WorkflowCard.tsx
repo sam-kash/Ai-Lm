@@ -12,7 +12,7 @@ export default function WorkflowCard({ workflow }: any) {
   return (
     <Link href={`/workflow/${workflow.id}`}>
 
-      <div className="bg-white rounded-xl border hover:shadow-lg transition overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-xl border dark:border-gray-700 hover:shadow-lg transition overflow-hidden">
 
         {workflow.example_output_url && (
           <img
@@ -32,12 +32,12 @@ export default function WorkflowCard({ workflow }: any) {
             {workflow.model}
           </p>
 
-          <div className="flex justify-between items-center mt-4 text-sm text-gray-600">
+          <div className="flex justify-between mt-4 text-sm text-gray-600">
 
-            <span> {workflow.runs} runs</span>
+            <span> {workflow.runs}</span>
 
             {workflow.title.includes("(Fork)") && (
-              <span className="bg-gray-200 px-2 py-1 rounded text-xs">
+              <span className="text-xs bg-gray-200 px-2 py-1 rounded">
                 Fork
               </span>
             )}
